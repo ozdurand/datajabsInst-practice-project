@@ -2,6 +2,7 @@ package com.datajabs.datajabsinstitute.model;
 
 
 import com.datajabs.datajabsinstitute.annotation.FieldsValueMatch;
+import com.datajabs.datajabsinstitute.annotation.PasswordValidator;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -24,7 +25,7 @@ import org.hibernate.annotations.GenericGenerator;
                 message = "Email addresses do not match!"
         )
 })
-public class Person {
+public class Person extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
@@ -50,6 +51,7 @@ public class Person {
 
     @NotBlank(message="Password must not be blank")
     @Size(min=5, message="Password must be at least 5 characters long")
+    @PasswordValidator
     private String pwd;
 
     @NotBlank(message="Confirm Password must not be blank")
