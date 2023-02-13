@@ -1,11 +1,9 @@
 package com.datajabs.datajabsinstitute.repository;
 
-import com.datajabs.datajabsinstitute.model.Person;
+import com.datajabs.datajabsinstitute.model.DataJabClass;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonRepository extends JpaRepository<Person, Integer> {
-
-    Person readByEmail(String email);
+public interface DataJabRepository extends JpaRepository<DataJabClass, Integer> {
 }

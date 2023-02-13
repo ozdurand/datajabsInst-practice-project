@@ -25,7 +25,7 @@ public class FieldsValueMatchValidator
                 .getPropertyValue(fieldMatch);
         if (fieldValue != null) {
             return fieldValue.equals(fieldMatchValue);
-        } else {
+            } else {
             return fieldMatchValue == null;
         }
     }
